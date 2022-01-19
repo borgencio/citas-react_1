@@ -9,11 +9,13 @@ function App() {
   useEffect(() => {
     const obtenerLS = () =>{ 
       const pacientesLS = JSON.parse( localStorage.getItem('pacientes')) ?? []
-      setPaciente(pacientesLS)
+      setPacientes(pacientesLS)
     }
     
     obtenerLS()
   },[])
+
+
   useEffect(() => {
     localStorage.setItem('pacientes', JSON.stringify(pacientes))
   },[pacientes])
